@@ -7,7 +7,7 @@ isFever :: Float -> Bool
 isFever x = x > 37.8
 
 int2Float :: Int -> Float
-int2Float y = fromIntegral y :: Float
+int2Float x = fromIntegral x :: Float
 
 isbigCircle :: Float -> Int -> Bool
 isbigCircle y x = (int2Float x)^2*pi > y
@@ -25,8 +25,8 @@ itemize :: [String] -> [String]
 itemize lista = map (\x -> "<li>" ++ x ++ "</li>") lista
 
 --4
-bigCircles :: Float -> [Float] -> [Float]
-bigCircles y lista = filter (\x -> x^2*pi > y) lista
+bigCircles :: Float -> [Int] -> [Int]
+bigCircles y list = filter (isbigCircle y) list
 
 --5
 quarentena :: [(String,Float)] -> [(String,Float)]
